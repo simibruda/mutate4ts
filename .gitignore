@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+.mutate4ts/
+*.log
+.DS_Store
