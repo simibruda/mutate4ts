@@ -1,0 +1,38 @@
+{
+  "name": "mutate4ts",
+  "version": "0.1.0",
+  "description": "Standalone mutation-testing tool for TypeScript and React projects.",
+  "type": "module",
+  "bin": {
+    "mutate4ts": "dist/cli/main.js"
+  },
+  "main": "dist/cli/main.js",
+  "files": [
+    "dist",
+    "README.md",
+    "spec.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mutation-testing",
+    "typescript",
+    "react",
+    "jsx",
+    "tsx"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "vitest": "^2.1.8"
+  }
+}
