@@ -262,6 +262,21 @@ npm run build
 
 `npm test` runs the unit suite plus a small `node:test` integration run against a temporary sample package.
 
+## Example React app
+
+`examples/pulse-board` is a 20-file React task board with logic, hooks, and UI. Use it to try mutate4ts on real application files:
+
+```bash
+cd examples/pulse-board
+npm install
+npm test
+npm run dev
+
+# from the repository root
+npx tsx src/cli/main.ts examples/pulse-board/src/components/Badge.tsx --scan
+npx tsx src/cli/main.ts examples/pulse-board/src/lib/priority.ts --mutate-all --verbose --max-workers 2 --test-command "npx vitest run"
+```
+
 ## Workflow Recommendation
 
 If you have a batch of mutation runs to execute in the same package, let the first run generate fresh coverage and then use `--reuse-coverage` for the remaining runs.
