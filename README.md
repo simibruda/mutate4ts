@@ -272,8 +272,9 @@ npm install
 npm test
 npm run dev
 
-# from the repository root
+# from the repository root — UI (JSX) or logic
 npx tsx src/cli/main.ts examples/pulse-board/src/components/Badge.tsx --scan
+npx tsx src/cli/main.ts examples/pulse-board/src/components/Badge.tsx --mutate-all --verbose --max-workers 2 --test-command "npx vitest run"
 npx tsx src/cli/main.ts examples/pulse-board/src/lib/priority.ts --mutate-all --verbose --max-workers 2 --test-command "npx vitest run"
 ```
 

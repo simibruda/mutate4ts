@@ -44,9 +44,17 @@ npm run dev
 
 ## Mutate it
 
-From the repository root:
+From the repository root, mutate **UI** or **logic** files the same way. `--scan` prints JSX and logic sites; `--mutate-all` runs the tests against each mutant.
 
 ```bash
+# UI: Badge (JSX, className, ternary, data-urgent)
 npx tsx src/cli/main.ts examples/pulse-board/src/components/Badge.tsx --scan
+npx tsx src/cli/main.ts examples/pulse-board/src/components/Badge.tsx --mutate-all --verbose --max-workers 2 --test-command "npx vitest run"
+
+# UI: TaskItem (checkbox, badges, due-soon / urgent labels)
+npx tsx src/cli/main.ts examples/pulse-board/src/components/TaskItem.tsx --scan
+npx tsx src/cli/main.ts examples/pulse-board/src/components/TaskItem.tsx --mutate-all --verbose --max-workers 2 --test-command "npx vitest run"
+
+# Logic
 npx tsx src/cli/main.ts examples/pulse-board/src/lib/priority.ts --mutate-all --verbose --max-workers 2 --test-command "npx vitest run"
 ```
